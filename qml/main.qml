@@ -71,7 +71,7 @@ Window {
     WebEngineView {
         id: webView
 
-        url: "http://www.ossystems.com.br"
+        url: "https://localhost:10000"
 
         anchors.fill: parent
         visible: false
