@@ -1,11 +1,16 @@
 [Unit]
 Description=Qt Kiosk Browser
 DefaultDependencies=no
-Conflicts=getty@tty1.service
-After=systemd-user-sessions.service
+#Conflicts=getty@tty1.service
+After=weston@root.service
+Requires=weston@root.service
 
 [Service]
-ExecStart=/usr/bin/qt-kiosk-browser -platform wayland /etc/qt-kiosk-browser.conf
+Restart=on-failure
+Enviornment="QT_QPA_PLATFORM=wayland-egl"
+ExecStart=/usr/bin/qt-kiosk-browser -platform xcb /etc/qt-kiosk-browser.conf
+RestartSec=1
 
 [Install]
-Alias=display-manager.service
+WantedBy=multi-user.target
+#Alias=display-manager.service

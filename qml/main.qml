@@ -71,7 +71,7 @@ Window {
     WebEngineView {
         id: webView
 
-        url: "https://localhost:10000"
+        url: "http://localhost:3000"
 
         anchors.fill: parent
         visible: false
@@ -102,6 +102,7 @@ Window {
         }
     }
 
+    /*
     InputPanel {
         id: inputPanel
 
@@ -110,7 +111,7 @@ Window {
         anchors.left: parent.left
         anchors.right: parent.right
     }
-
+    */
     Rectangle {
         id: screenSaver
         color: "black"
